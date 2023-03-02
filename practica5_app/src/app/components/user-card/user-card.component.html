@@ -1,0 +1,11 @@
+<div class="card" style="width: 15rem;">
+    <img [src]="miUser.image" class="rounded-circle mx-auto img-fluid" width="200" height="236" style="padding: 15px" [alt]="miUser.first_name">
+    <div class="card-body" >
+      <h5 style="font-size: 12px; text-align: center;" class="card-title">{{miUser.first_name}} {{miUser.last_name}}</h5>
+    </div>
+    <div>
+        <div>  
+            <a class="btn btn-primary" [routerLink]="['/user', miUser.id]">Ver detalle</a>
+        </div>
+</div>
+  </div>
