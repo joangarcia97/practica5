@@ -3,9 +3,11 @@
     <div class="card-body" >
       <h5 style="font-size: 12px; text-align: center;" class="card-title">{{miUser.first_name}} {{miUser.last_name}}</h5>
     </div>
-    <div>
-        <div>  
-            <a class="btn btn-primary" [routerLink]="['/user', miUser.id]">Ver detalle</a>
-        </div>
+    <div style="display: flex">
+          
+            <a class="btn btn-warning" [routerLink]="['/user', miUser._id]">Ver detalle</a>
+            <a class="btn btn-secondary" [routerLink]="['/newuser', miUser._id]">Actualizar</a>
+            <a class="btn btn-danger">Borrar</a>
+        
+    </div>
 </div>
-  </div>

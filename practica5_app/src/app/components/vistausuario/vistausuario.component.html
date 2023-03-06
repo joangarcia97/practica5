@@ -1,0 +1,20 @@
+  <section class="container mt-3">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="usuario.image" class="rounded-circle mx-auto img-fluid" width="200" height="236" style="padding: 15px" [alt]="usuario.first_name">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ usuario.first_name }}</h5>
+            <h5 class="card-title">{{ usuario.last_name }}</h5>
+            <strong style="font-size: 12px;">Nombre Usuario:</strong><p class="card-text" style="font-size: 12px;">{{ usuario.username }}</p>
+            <strong style="font-size: 12px;">Email:</strong><p class="card-text" style="font-size: 12px;">{{ usuario.email }}</p>
+            <button class="btn btn-warning" [routerLink]="['/home']">Volver a usuarios</button>
+            <a class="btn btn-secondary" [routerLink]="['/newuser', usuario._id]">Actualizar</a>
+            <a class="btn btn-danger">Borrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
