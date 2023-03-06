@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { ActivatedRoute } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { UserCardComponent } from '../user-card/user-card.component';
 
 @Component({
   selector: 'app-vistausuario',
@@ -25,4 +26,24 @@ export class VistausuarioComponent {
         
       })
     }
+
+    deleteUser(pId: number | undefined): void{
+      const miObservable = {
+        next: (response: any) => {
+          if (!response){
+            alert('Usuario borrado correctamente')
+
+          }
+        },
+        error: (error: any) => {
+          console.log(error)
+      }
+
+      }
+      
+    if (pId){
+      this.usuariosServicio.deleteObs(pId).subscribe(miObservable)
+    }
+
+  }
 }

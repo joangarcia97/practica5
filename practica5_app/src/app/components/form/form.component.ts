@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { UsuariosService } from 'src/app/services/usuarios.service';
@@ -22,10 +22,10 @@ export class FormComponent implements OnInit {
       private activatedRoute: ActivatedRoute
     ){
       this.userForm = new FormGroup({
-        first_name: new FormControl("", []),
-        last_name: new FormControl("", []),
-        email: new FormControl("", []),
-        avatar: new FormControl("", []),
+        first_name: new FormControl("", [Validators.required]),
+        last_name: new FormControl("", [Validators.required]),
+        email: new FormControl("", [Validators.required]),
+        avatar: new FormControl("", [Validators.required]),
       }, []);
     }
 
@@ -58,7 +58,7 @@ export class FormComponent implements OnInit {
       this.usuariosServicio.create(user)
         .then((response) => {
           if (response.id) {
-            alert(`usuario ${response.first_name} con id ${response.id} se creado correctamente`);
+            alert(`El usuario ${response.first_name} con id ${response.id} se ha creado correctamente`);
             this.router.navigate(['/home']);
           }
         })

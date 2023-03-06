@@ -1,3 +1,10 @@
-
-<router-outlet></router-outlet>
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <ul class="nav nav-pills" style="gap: 10px;">
+        <li class="nav-item" [routerLink]="['/home']">Home</li>
+        <li class="nav-item" [routerLink]="['/newuser']"><a >Nuevo usuario</a></li>
+    </ul>
+    </header>
+  <main class="container">
+    <router-outlet></router-outlet>
+  </main>
 

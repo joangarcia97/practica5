@@ -11,8 +11,8 @@
             <strong style="font-size: 12px;">Nombre Usuario:</strong><p class="card-text" style="font-size: 12px;">{{ usuario.username }}</p>
             <strong style="font-size: 12px;">Email:</strong><p class="card-text" style="font-size: 12px;">{{ usuario.email }}</p>
             <button class="btn btn-warning" [routerLink]="['/home']">Volver a usuarios</button>
-            <a class="btn btn-secondary" [routerLink]="['/newuser', usuario._id]">Actualizar</a>
-            <a class="btn btn-danger">Borrar</a>
+            <a class="btn btn-secondary" [routerLink]="['/updateuser', usuario._id]">Actualizar</a>
+            <a class="btn btn-danger" (click)="deleteUser(usuario._id)">Borrar</a>
           </div>
         </div>
       </div>

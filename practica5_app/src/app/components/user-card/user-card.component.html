@@ -7,7 +7,7 @@
           
             <a class="btn btn-warning" [routerLink]="['/user', miUser._id]">Ver detalle</a>
             <a class="btn btn-secondary" [routerLink]="['/updateuser', miUser._id]">Actualizar</a>
-            <a class="btn btn-danger">Borrar</a>
+            <a class="btn btn-danger" (click)="deleteUser(miUser.id)">Borrar</a>
         
     </div>
 </div>

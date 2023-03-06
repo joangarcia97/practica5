@@ -27,12 +27,12 @@ update(pUsuario: Usuario): Observable<Usuario>{
   return this.httpClient.put<Usuario>(`${this.baseUrl}${pUsuario._id}`, pUsuario)
 }
 
-delete(pId: string): Promise<any>{
-  return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`))
+delete(pId: string): Promise<Usuario>{
+  return lastValueFrom(this.httpClient.delete<Usuario>(`${this.baseUrl}${pId}`))
 }
 
-deleteObs(pId: number): Observable<any>{
-  return this.httpClient.delete<any>(`${this.baseUrl}${pId}`);
+deleteObs(pId: number): Observable<Usuario>{
+  return this.httpClient.delete<Usuario>(`${this.baseUrl}${pId}`);
 }
 
 }
